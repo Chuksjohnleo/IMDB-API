@@ -17,11 +17,11 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    color: rgb(var(--foreground-rgb));
+    background-image: url('http://localhost:3000/favicon_io/android-chrome-512x512.png/');
+    text-align: center;
+    backdrop-filter: blur(14px);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
