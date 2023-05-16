@@ -33,7 +33,7 @@ export default function HomeLayout(){
                 return(
                     <div className="flex border flex-col justify-center items-center m-1 p-2" key={movie.id}>
                       <div><em>{movie.rank}</em></div>
-                      {/* <div><img src={movie.image.length>4?movie.image:'/favicon_io/android-chrome-512x512.png'} alt={movie.title} height={100} width={200} /></div> */}
+                      <div><img src={movie.image.length>4?movie.image:'/favicon_io/android-chrome-512x512.png'} alt={movie.title} height={100} width={200} /></div>
                       <div><strong>{movie.title}</strong></div>
                       <div>{movie?.description}</div>
                       <div>{movie?.imDbRating}</div>
