@@ -11,16 +11,12 @@ export default function Home() {
   return (
    
     <Context>
-     <Head>
+      <Head>
          <title>Top 250 Movies in IMDB</title>
-     </Head>
-     <Nav />
-     <main
-      className={`flex min-h-screen flex-col items-center justify-between`}
-      >
+      </Head>
+      <Nav />
       <HomeLayout />
-    </main>
-    <Footer />
+      <Footer />
     </Context>
   )
 }

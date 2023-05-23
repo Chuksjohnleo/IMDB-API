@@ -1,9 +1,13 @@
 import https from 'https';
-// import fs from 'fs';
+import fs from 'fs';
  
 const apiKey = process.env.IMDB_API_KEY;
  
 export default function handler(request, response) {
+  // fs.readFile('body.txt', 'utf-8', (e, r)=>{
+  //   console.log(r,'ok');
+  //   response.json(JSON.parse(r))
+  // })
     console.log(request.body)
 if(request.method === 'POST'){
 let options = {

@@ -5,6 +5,8 @@ import Link from "next/link";
 export default function Nav(){
   const {languageSetter, language, fetchMovies, searchMovies, queryType, setQueryType } = useContext(MovieContext);
   const [query, setQuery] = useState('');
+  // const [search, setSearch] = useState(false);
+ 
   
 
   function fetchAsRequired(){

@@ -2,23 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
 
 body {
-    color: rgb(var(--foreground-rgb));
-    background-image: url('http://localhost:3000/favicon_io/android-chrome-512x512.png/');
+    background-image: url('https://imdb-api-chuksjohnleo.vercel.app/favicon_io/android-chrome-512x512.png/');
     text-align: center;
     backdrop-filter: blur(14px);
     background-position: center;
