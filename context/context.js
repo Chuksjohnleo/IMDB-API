@@ -86,7 +86,7 @@ function getMovies() {
         })
         .then(res=>{return res.json()})
         .then(res=>{
-          console.log(res.results);
+          // console.log(res.results);
           setMovies(res.results);
           setText(`your search '${query}'`);
         

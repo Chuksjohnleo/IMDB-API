@@ -62,6 +62,19 @@ export default function HomeLayout(){
         )
     }
 
+    const abnormalMovies = [
+      'tt0110912','tt0080684', 'tt0076759',
+      'tt0054215', 'tt0095765', 'tt0405094', 
+      'tt0051201', 'tt0169547', 'tt0361748', 
+      'tt5311514', 'tt0086190', 'tt0033467', 
+      'tt0211915', 'tt0119488', 'tt0053291',
+      'tt0112641', 'tt0031381', 'tt0266697',
+      'tt0031381','tt0117951', 'tt1291584',
+      'tt0405159', 'tt3011894', 'tt0050976',
+      'tt0118715', 'tt0381681', 'tt4016934',
+      'tt0032976', 'tt0325980'
+     ]
+
     return(
         <>
           {viewDetails?<MovieDetail cancelShowMovieDetails={cancelShowMovieDetails} currentMovie={currentMovie} />:''}
@@ -78,15 +91,25 @@ export default function HomeLayout(){
          {movies.length<1? <div className="text-5xl font-bold w-full">Nothing here</div> :<div className="grid grid-cols-1 sm:grid-cols-4 xSm:grid-cols-2 my-2 w-fullbg-white/30 backdrop-blur">
             
             {movies.map(movie=>{
-                return(
-                    <div onClick={()=>showMovieDetails(movie)} className="border items-center m-1 p-2" key={movie.id}>
+               if(abnormalMovies.includes(movie.id)){
+
+               return(
+                    <div className="border items-center m-1 p-2" key={movie.id}>
                       <div className="p-2 font-bold"><em>Rank: </em><em>{movie.rank}</em></div>
-                      {/* <div className="h-[300px]"><img src={movie.image.length>4?movie.image:'/favicon_io/android-chrome-512x512.png'} alt={movie.title} className="h-[300px]"/></div> */}
-                      <div><strong>{movie.title}</strong></div>
-                      <div>{movie.description}</div>
+                      <div className="h-[300px]"><img src={'/favicon_io/android-chrome-512x512.png'} alt={"My logo"} className="h-[300px]"/></div>
+                      <div><strong>Won't show this here</strong></div>
                       <div>{movie.imDbRating}</div>
                     </div>
                 )
+              }
+              return (
+            <div onClick={()=>showMovieDetails(movie)} className="border items-center m-1 p-2" key={movie.id}>
+              <div className="p-2 font-bold"><em>Rank: </em><em>{movie.rank}</em></div>
+              <div className="h-[300px]"><img src={movie.image.length>4?movie.image:'/favicon_io/android-chrome-512x512.png'} alt={movie.title} className="h-[300px]"/></div>
+              <div><strong>{movie.title}</strong></div>
+              <div>{movie.description}</div>
+              <div>{movie.imDbRating}</div>
+            </div>)
             })}
           </div>
           }
