@@ -81,7 +81,7 @@ export default function HomeLayout(){
                 return(
                     <div onClick={()=>showMovieDetails(movie)} className="border items-center m-1 p-2" key={movie.id}>
                       <div className="p-2 font-bold"><em>Rank: </em><em>{movie.rank}</em></div>
-                      <div className="h-[300px]"><img src={movie.image.length>4?movie.image:'/favicon_io/android-chrome-512x512.png'} alt={movie.title} className="h-[300px]"/></div>
+                      {/* <div className="h-[300px]"><img src={movie.image.length>4?movie.image:'/favicon_io/android-chrome-512x512.png'} alt={movie.title} className="h-[300px]"/></div> */}
                       <div><strong>{movie.title}</strong></div>
                       <div>{movie.description}</div>
                       <div>{movie.imDbRating}</div>

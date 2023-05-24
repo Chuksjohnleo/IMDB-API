@@ -8,7 +8,9 @@ export default function MovieDetail({currentMovie, cancelShowMovieDetails}){
   const {language} = createContext(MovieContext);
 
   const [movie, setMovie] = useState(currentMovie);
-
+  const [rank, setRank] = useState(currentMovie.rank);
+  const [crew, setCrew] = useState(currentMovie.crew);
+  
   function fetchMovie(){
 
     fetch('/api/get-single-movie',{
@@ -38,7 +40,7 @@ export default function MovieDetail({currentMovie, cancelShowMovieDetails}){
                 <div className="z-50 sticky h-screen inset-0 bg-white/80 backdrop-blur">
                     <button className="text-red-600 border m-1 p-1 text-2xl font-bold" onClick={cancelShowMovieDetails}>Cancel</button>
                     <div className="flex font-semibold text-left mx-auto my-1 max-w-[100vw] h-[90vh]  overflow-y-auto border flex-col sm:flex-row items-center sm:items-stretch sm:justify-around p-2" key={movie.id}>
-                 <div className="p-4 max-w-lg"><div className="w-full text-center font-extrabold"><em>Rank: </em><em>{movie.rank}</em></div>
+                 <div className="p-4 max-w-lg"><div className="w-full text-center font-extrabold"><em>Rank: </em><em>{rank}</em></div>
                       <div><img className="w-full h-[80vh] max-w-md object-contain" src={movie.image?.length>4?movie.image:'/favicon_io/android-chrome-512x512.png'} alt={movie.title} height={100} width={200} /></div>
                       </div>  <div className="p-4 max-w-lg">
                         <div className="w-full"><strong>Title: </strong><strong>{movie.title}</strong></div>
@@ -80,13 +82,13 @@ export default function MovieDetail({currentMovie, cancelShowMovieDetails}){
                         </ul>
                         </>
                       :''}
-                      {movie.crew?                    
+                      {crew?                    
                        <>
                          <h1 className="text-2xl underline">Crews</h1>
                          <ul className="list-outside pl-4 mb-4 list-disc text-xl font-semibold">
                           {
-                            movie.crew.split(',').map((crew, i)=>{
-                              return<li key={crew+i}>{crew}</li>
+                              crew.split(',').map((name, i)=>{
+                              return<li key={name+i}>{name}</li>
                             })
                           }
                         </ul>
