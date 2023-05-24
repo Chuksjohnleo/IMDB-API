@@ -24,7 +24,7 @@ export default function MovieDetail({currentMovie, cancelShowMovieDetails}){
     .then(res=>{return res.json()})
     .then(res=>{
       console.log(res)
-      // setMovie(res);
+      setMovie(res);
     }).catch(e=>{
       console.log(e)
     })
@@ -48,7 +48,7 @@ export default function MovieDetail({currentMovie, cancelShowMovieDetails}){
                         {movie.description?<div className="w-full"><span>Description: </span> <span>{movie.description}</span></div>:''}
                         <div className="w-full"><span className="font-extrabold">Rating: </span><span>{movie.imDbRating}</span></div>
                         <div className="w-full"><span className="font-extrabold">Content Rating: </span><span>{movie.contentRating}</span></div>
-                        <div className="min-w-full"><span className="font-extrabold">Rating Count: </span><span>{movie.imDbRatingCount}</span></div>
+                        {movie.description?<div className="min-w-full"><span className="font-extrabold">Rating Count: </span><span>{movie.imDbRatingCount}</span></div>:''}
                         <div className="min-w-full"><span className="font-extrabold">Plot: </span><span>{movie.plot}</span></div>
                         <div className="min-w-full"><span className="font-extrabold">Run time: </span><span>{movie.runtimeStr}</span></div>
                         <div className="w-full"><span className="font-extrabold">Awards: </span><span>{movie.awards}</span></div>
